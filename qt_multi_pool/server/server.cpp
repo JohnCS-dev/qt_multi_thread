@@ -12,10 +12,8 @@
 #endif
 
 StorageClientThread::StorageClientThread(qintptr socketDescriptor, IStorage *storage, QObject *parent)
-    : QThread(parent), m_pSocketDescriptor(socketDescriptor), m_pStorage(storage), m_pOperation(-1)
-{
-    m_pReadCount = 0;
-    m_pWriteCount = 0;
+    : QThread(parent), m_pSocketDescriptor(socketDescriptor), m_pStorage(storage), m_pOperation(-1), m_pReadCount(0), m_pWriteCount(0)
+{    
 }
 
 void StorageClientThread::run()
